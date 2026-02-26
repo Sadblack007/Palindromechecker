@@ -1,0 +1,26 @@
+public class PalindromeChecker {
+
+    // Logic to check if a string is a palindrome
+    public static boolean isPalindrome(String str) {
+        if (str == null) return false;
+        
+        String cleanStr = str.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+        String reversed = new StringBuilder(cleanStr).reverse().toString();
+        
+        return cleanStr.equals(reversed);
+    }
+
+    public static void main(String[] args) {
+        // --- Use Case 2: Hardcoded String Check ---
+        
+        // String Literal: A hardcoded value stored in the String constant pool
+        String word = "madam"; 
+        
+        // Conditional Statement (if-else): Evaluates the result
+        if (isPalindrome(word)) {
+            System.out.println("The word '" + word + "' is a palindrome.");
+        } else {
+            System.out.println("The word '" + word + "' is NOT a palindrome.");
+        }
+    }
+}
